@@ -7,11 +7,18 @@ import java.util.Iterator;
 
 public class Lexer implements Iterator<Lexem> {
 	private Reader reader;
-	protected Integer currentChar;
+	protected int currentChar;
 
 	public Lexer(Reader reader) throws LexerException {
 		this.reader = reader;
 		getChar();
+		ignoreWhiteCharacters();
+	}
+
+	protected void ignoreWhiteCharacters() throws LexerException {
+		while(Character.isWhitespace(currentChar)) {
+			getChar();
+		}
 	}
 
 	private void getChar() throws LexerException {

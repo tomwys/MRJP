@@ -19,6 +19,12 @@ public class LexerTest {
 		assertTrue(l.hasNext());
 	}
 
+	@Test
+	public void testIfEmptyForWhiteInput() throws Exception {
+		Lexer l = getLexerForString(" \t\n");
+		assertFalse(l.hasNext());
+	}
+
 	private Lexer getLexerForString(String input) throws LexerException {
 		return new Lexer(new StringReader(input));
 	}
