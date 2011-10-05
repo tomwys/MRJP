@@ -8,8 +8,18 @@ import org.junit.Test;
 
 public class LexerTest {
 	@Test
-	public void testIfEmtyForEmtyInput() throws Exception {
-		Lexer l = new Lexer(new StringReader(""));
+	public void testIfEmptyForEmtyInput() throws Exception {
+		Lexer l = getLexerForString("");
 		assertFalse(l.hasNext());
+	}
+
+	@Test
+	public void testIfHasNextReturnTrueForNonEmptySource() throws Exception {
+		Lexer l = getLexerForString("9");
+		assertTrue(l.hasNext());
+	}
+
+	private Lexer getLexerForString(String input) throws LexerException {
+		return new Lexer(new StringReader(input));
 	}
 }
