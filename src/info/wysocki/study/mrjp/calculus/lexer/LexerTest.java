@@ -1,4 +1,4 @@
-package info.wysocki.study.mrjp.calculus;
+package info.wysocki.study.mrjp.calculus.lexer;
 
 import static org.junit.Assert.*;
 

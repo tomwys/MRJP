@@ -1,9 +1,8 @@
-package info.wysocki.study.mrjp.calculus;
+package info.wysocki.study.mrjp.calculus.lexer;
 
 import java.io.Reader;
 import java.util.Iterator;
 
-import info.wysocki.study.mrjp.calculus.lexem.Lexem;
 
 public class Lexer implements Iterator<Lexem> {
 	public Reader reader;
